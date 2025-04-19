@@ -90,14 +90,19 @@ export default function Dashboard({ data }) {
 }
 const styles = {
     sectionHeader: {
-      fontSize: "40px",
-      fontWeight: "bold",
-      color: " #e5e5e5",
-      textAlign: "center",
-      marginTop: "120px",
-      marginBottom: "30px",
-      textTransform: "uppercase",
-    },
+        fontSize: "40px",
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: "120px",
+        marginBottom: "30px",
+        textTransform: "uppercase",
+        background: "linear-gradient(90deg,rgb(0, 255, 208),rgb(203, 200, 255))",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        borderBottom: "3px solid rgb(47, 47, 47)", // underline color here
+  paddingBottom: "5px", // space between text and underline
+      },
+      
     description: {
         fontSize: "20px",
         color: "#ccc",
