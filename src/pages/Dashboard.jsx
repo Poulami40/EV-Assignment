@@ -38,21 +38,24 @@ export default function Dashboard({ data }) {
       <EVSummary data={data} />
 
       <h2 style={styles.sectionHeader}>Overview</h2>
-      <p style={styles.description}>A quick summary of key electric vehicle metrics and trends.</p>
+      <p style={styles.description}>Discover the top 10 electric vehicle makes and how their electric ranges compare.
+      Get insights into key EV metrics and emerging trends in adoption and performance.</p>
       <div className="charts-container">
         <EVMakeChart data={data} />
         <EVRangeHistogram data={filteredData} />
       </div>
 
       <div className="dashboard-container">
-        <h1 style={{marginTop:"100px"}}>Geographical analysis of electric vehicle count</h1>
-        <p style={styles.description}>This section explores the geographical distribution of electric vehicles for all 39 counties.</p>
+        <h2 style={styles.sectionHeader}>Geographical analysis of electric vehicle count</h2>
+        <p style={styles.description}>This section explores the geographical distribution of electric vehicles across all 39 counties in Washington.
+        Gain insights into regional adoption patterns, highlighting areas with the highest and lowest EV presence.</p>
         <EVChoroplethMap data={filteredData} />
       </div>
 
 
       <h2 style={styles.sectionHeader}>EV Adoption and Range Progression</h2>
-      <p style={styles.description}>Insights into how EV adoption is growing and the range of available EVs.</p>
+      <p style={styles.description}>Get insights into how electric vehicle adoption is growing over time.
+      Explore the evolving range capabilities of available EV models.</p>
       <div className="charts-container">
         <div className="chart-wrapper">
           <EVAdoptionTrends data={filteredData} />
@@ -63,7 +66,8 @@ export default function Dashboard({ data }) {
       </div>
 
       <h2 style={styles.sectionHeader}>CAFV Eligibility Analysis</h2>
-      <p style={styles.description}>An analysis of Clean Alternative Fuel Vehicle (CAFV) eligibility trends.</p>
+      <p style={styles.description}>An in-depth analysis of Clean Alternative Fuel Vehicle (CAFV) eligibility trends.
+      Understand how eligibility varies across EV makes and adoption patterns.</p>
       <div className="charts-container">
         <div className="chart-wrapper">
           <CAFVPieChart data={filteredData} />
@@ -86,18 +90,19 @@ export default function Dashboard({ data }) {
 }
 const styles = {
     sectionHeader: {
-      fontSize: "36px",
+      fontSize: "40px",
       fontWeight: "bold",
-      color: "#e5e5e5",
+      color: " #e5e5e5",
       textAlign: "center",
-      marginTop: "80px",
-      marginBottom: "20px",
+      marginTop: "120px",
+      marginBottom: "30px",
+      textTransform: "uppercase",
     },
     description: {
         fontSize: "20px",
         color: "#ccc",
         textAlign: "center",
-        marginBottom: "80px",
+        marginBottom: "120px",
       },
       loaderContainer: {
         display: "flex",
