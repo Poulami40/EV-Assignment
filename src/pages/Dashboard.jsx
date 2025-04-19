@@ -34,6 +34,7 @@ export default function Dashboard({ data }) {
         </div>
         
         <div>
+        <VINLookup data={data} />
       <EVSummary data={data} />
 
       <h2 style={styles.sectionHeader}>Overview</h2>
@@ -76,7 +77,7 @@ export default function Dashboard({ data }) {
       <p style={styles.description}> This chart shows the relationship between an EV’s cost (Base MSRP) and its electric range.<br />
       The bubble size represents the popularity of each model, helping compare affordability, efficiency, and adoption.</p>
       <EVCostVsRange data={filteredData} />
-      <VINLookup data={data} />
+      
     </div>
        
     </div>

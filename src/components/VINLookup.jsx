@@ -30,6 +30,7 @@ export default function VINLookup({ data }) {
         maxWidth: "700px",
         border: "1px solid #2e2e3e",
         boxShadow: "0 0 20px rgba(0, 255, 150, 0.15)",
+        marginBottom:"80px"
       }}
     >
       <h2
@@ -84,7 +85,7 @@ export default function VINLookup({ data }) {
             padding: "0.75rem 1.5rem",
             borderRadius: "8px",
             border: "none",
-            background: "linear-gradient(135deg, #00f5a0, #00d9f5)",
+            background: "linear-gradient(135deg,rgb(94, 255, 199), #00d9f5)",
             color: "#0f0f0f",
             fontWeight: "bold",
             cursor: "pointer",

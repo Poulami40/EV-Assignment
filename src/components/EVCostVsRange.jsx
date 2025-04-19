@@ -47,7 +47,7 @@ export default function EVCostVsRange({ data }) {
   );
 
   return (
-    <div className="chart-container">
+    <div className="chart-container" style={{marginBottom:"40px"}}>
       <h2 style={{ textAlign: "center" }}>
         Cost vs. Range (Size Represents Model Popularity)
       </h2>
@@ -65,7 +65,7 @@ export default function EVCostVsRange({ data }) {
 <div
   style={{
     marginTop: "2rem",
-    backgroundColor: "#1e1e1e",
+    backgroundColor: " #1e1e1e",
     padding: "1.5rem",
     borderRadius: "12px",
     color: "#ffffff",
@@ -73,6 +73,7 @@ export default function EVCostVsRange({ data }) {
     maxWidth: "600px",
     marginLeft: "auto",
     marginRight: "auto",
+    marginBottom:"40px"
   }}
 >
   <h3
