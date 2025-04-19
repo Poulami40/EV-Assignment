@@ -96,9 +96,20 @@ export default function EVRangeProgressionChart({ data }) {
 
   // Dynamic message based on selected make/type
   const message = selectedMake || selectedType
-    ? `The chart displays the electric range progression for ${selectedMake ? selectedMake : selectedType} EVs. The highest average range was in ${highestYear.year} with ${highestYear.averageRange.toFixed(2)} miles, and the lowest average range was in ${lowestYear.year} with ${lowestYear.averageRange.toFixed(2)} miles. The overall trend appears to be ${trend}.`
-    : `The chart shows the overall electric range progression across all makes and types of EVs. The highest average range was in ${highestYear.year} with ${highestYear.averageRange.toFixed(2)} miles, and the lowest average range was in ${lowestYear.year} with ${lowestYear.averageRange.toFixed(2)} miles. The overall trend appears to be ${trend}.`;
-
+    ? <>
+    Electric range progression for {selectedMake ? selectedMake : selectedType} EVs: <br />
+    Highest in {highestYear.year} ({highestYear.averageRange.toFixed(2)} miles) <br />
+    Lowest in {lowestYear.year} ({lowestYear.averageRange.toFixed(2)} miles) <br />
+    Trend: {trend}
+  </>
+  
+    : <>
+    Electric range progression: <br />
+    Highest in {highestYear.year} ({highestYear.averageRange.toFixed(2)} miles) <br />
+    Lowest in {lowestYear.year} ({lowestYear.averageRange.toFixed(2)} miles) <br />
+    Trend: {trend}
+  </>
+  
   return (
     <div style={styles.container}>
       <h2 style={styles.header}>Year vs. Electric Range Progression</h2>
@@ -212,12 +223,13 @@ const styles = {
     marginBottom: "20px",
     fontWeight: "600",
     color: "#e5e5e5",
-    textAlign:"center"
+    textAlign:"center",
+    marginTop:"40px"
   },
   filters: {
     display: "flex",
     gap: "10px",
-    marginBottom: "20px",
+    marginBottom: "40px",
     width: "80%",  // Increase this value to make the filter container wider
     margin: "0 auto", // Center the filter container
   },

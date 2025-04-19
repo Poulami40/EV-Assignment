@@ -25,7 +25,7 @@ const CAFVPieChart = ({ data }) => {
   const eligiblePercentage = ((aggregated[0].value / total) * 100).toFixed(2);
   const notEligiblePercentage = ((aggregated[1].value / total) * 100).toFixed(2);
 
-  const COLORS = ["#00C49F", "#FF4C5B"];
+  const COLORS = [" #00C49F", " #FF4C5B"];
 
   return (
     <div style={styles.container}>
@@ -62,16 +62,26 @@ const CAFVPieChart = ({ data }) => {
   </PieChart>
 </div>
 
-      {/* Insights Section */}
-      <div style={styles.insightContainer}>
-        <h3 style={styles.insightHeader}>Insights</h3>
-        <p style={styles.insightText}>
-          <strong>Eligible:</strong> {aggregated[0].value} vehicles ({eligiblePercentage}%) are eligible for Clean Alternative Fuel Vehicle programs.
-        </p>
-        <p style={styles.insightText}>
-          <strong>Not Eligible:</strong> {aggregated[1].value} vehicles ({notEligiblePercentage}%) are not eligible.
-        </p>
-      </div>
+     {/* Insights Section */}
+<div style={styles.insightContainer}>
+  <h3 style={styles.insightHeader}>Insights</h3>
+  <div style={styles.insightRow}>
+    <p style={styles.insightText}>
+      <strong style={{ color: "#00C49F" }}>Eligible:</strong> {aggregated[0].value} vehicles 
+      <span style={{ color: "#00C49F" }}> ({eligiblePercentage}%)  </span>  
+      are eligible for Clean Alternative Fuel Vehicle programs.
+    </p>
+  </div>
+  <div style={styles.insightRow}>
+    <p style={styles.insightText}>
+      <strong style={{ color: "#FF4C5B" }}>Not Eligible:</strong> {aggregated[1].value} vehicles 
+      <span style={{ color: "#FF4C5B" }}> ({notEligiblePercentage}%)  </span> 
+      are not eligible.
+    </p>
+  </div>
+</div>
+
+
     </div>
   );
 };
@@ -110,22 +120,32 @@ const styles = {
     color: "#ccc",
   },
   insightContainer: {
-    marginTop: "60px",
-    // backgroundColor: " #2a2a2a",
-    padding: "15px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.4)",
+    backgroundColor: "#2c2c2c", // Slightly darker background for better contrast
+    padding: "20px",
+    borderRadius: "12px",
+    color: "#ffffff",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+    marginBottom: "2rem",
+    marginTop:"40px"
   },
   insightHeader: {
-    fontSize: "18px",
-    marginBottom: "12px",
-    fontWeight: "600",
-    color: "#fff",
+    textAlign: "center",
+    marginBottom: "1rem",
+    fontSize: "22px",
+    fontWeight: "bold",
+    color: "#e5e5e5",
+  },
+  insightRow: {
+    marginBottom: "10px",
   },
   insightText: {
     fontSize: "16px",
-    color: "#ccc",
-    lineHeight: "1.6",
+    lineHeight: "1.5",
+    margin: "8px 0",
+  },
+  percentage: {
+    fontWeight: "bold",
+    color: "#e5e5e5", // Set percentage color to white for contrast
   },
 };
 

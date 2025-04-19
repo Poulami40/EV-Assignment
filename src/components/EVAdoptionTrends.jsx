@@ -36,10 +36,20 @@ export default function EVAdoptionTrends({ data }) {
 
   // Dynamic message based on selected county
   const message = selectedCounty === "All"
-    ? `The chart displays EV adoption trends for all counties. You can select a specific county to view adoption trends in that region. 
-       The highest adoption was in ${highestYear.year} with ${highestYear.count} vehicles, and the lowest adoption was in ${lowestYear.year} with ${lowestYear.count} vehicles. The overall trend appears to be ${trend}.`
-    : `EV adoption trends for ${selectedCounty} county. The data represents the number of EVs registered in each year for this county. 
-       The highest adoption was in ${highestYear.year} with ${highestYear.count} vehicles, and the lowest adoption was in ${lowestYear.year} with ${lowestYear.count} vehicles. The trend in ${selectedCounty} county appears to be ${trend}.`;
+    ? <>
+    The chart displays EV adoption trends for all counties. You can select a specific county to view adoption trends in that region. <br />
+    Highest adoption: {highestYear.year} ({highestYear.count} vehicles) <br />
+    Lowest adoption: {lowestYear.year} ({lowestYear.count} vehicles) <br />
+    Trend: {trend}
+  </>
+  
+    : <>
+    EV adoption in {selectedCounty}: <br />
+    Highest in {highestYear.year} ({highestYear.count} vehicles) <br />
+    Lowest in {lowestYear.year} ({lowestYear.count} vehicles) <br />
+    Trend: {trend}
+  </>
+
 
   return (
     <div style={{ background: "#1a1a1a", padding: "2rem", borderRadius: "1rem", color: "white", marginTop: "2rem" }}>
