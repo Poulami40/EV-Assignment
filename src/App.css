@@ -52,12 +52,15 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  
+  /* padding: 20px; */
   font-family: "Nanum Myeongjo", serif;
   font-weight: 400;
   font-size: "800px";
   margin-bottom: "700px";
+  margin: 0 auto;
+ margin-top: "200px";
+  padding: 0 1rem;
 }
 
 h1 {
