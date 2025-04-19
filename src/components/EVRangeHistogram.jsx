@@ -29,68 +29,70 @@ export default function EVRangeHistogram({ data }) {
   return (
     <div style={styles.container}>
       <h2 style={styles.header}>Electric Range Distribution</h2>
-
+  
       <ResponsiveContainer width="100%" height={400}>
         <BarChart data={histogramData} margin={{ top: 20, right: 30, left: 10, bottom: 60 }}>
-          {/* Gradient Definition */}
           <defs>
             <linearGradient id="rangeGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor=" #82ca9d" stopOpacity={0.9} />
               <stop offset="100%" stopColor=" #82ca9d" stopOpacity={0.2} />
             </linearGradient>
           </defs>
-
+  
           <CartesianGrid stroke="rgba(255,255,255,0.1)" />
-
+  
           <XAxis
-  dataKey="range"
-  stroke="#ccc"
-  tick={{ fill: "#ccc", fontSize: 12 }}
-  angle={-30}
-  textAnchor="end"
-  height={50}
-  label={{
-    value: "Range (miles)",
-    position: "bottom",
-    offset: 35,
-    fill: "#ccc",
-    fontSize: 14,
-  }}
-/>
-
-<YAxis
-  stroke="#ccc"
-  tick={{ fill: "#ccc", fontSize: 12 }}
-  label={{
-    value: "Number of Vehicles",
-    angle: -90,
-    position: "insideLeft",
-    offset: -4,
-    fill: "#ccc",
-    fontSize: 14,
-    dy: 50,
-  }}
-/>
-
-
+            dataKey="range"
+            stroke="#ccc"
+            tick={{ fill: "#ccc", fontSize: 12 }}
+            angle={-30}
+            textAnchor="end"
+            height={50}
+            label={{
+              value: "Range (miles)",
+              position: "bottom",
+              offset: 35,
+              fill: "#ccc",
+              fontSize: 14,
+            }}
+          />
+  
+          <YAxis
+            stroke="#ccc"
+            tick={{ fill: "#ccc", fontSize: 12 }}
+            label={{
+              value: "Number of Vehicles",
+              angle: -90,
+              position: "insideLeft",
+              offset: -4,
+              fill: "#ccc",
+              fontSize: 14,
+              dy: 50,
+            }}
+          />
+  
           <Tooltip
             contentStyle={styles.tooltip}
             labelStyle={{ color: "#fff" }}
             itemStyle={{ color: "#fff" }}
           />
-
-          {/* <Legend wrapperStyle={{ color: "#ccc" }} /> */}
-
+  
           <Bar
             dataKey="count"
             fill="url(#rangeGradient)"
             radius={[6, 6, 0, 0]}
-            activeBar={{  stroke: "rgb(93, 93, 93)", strokeWidth: 2 }}
+            activeBar={{ stroke: "rgb(93, 93, 93)", strokeWidth: 2 }}
           />
         </BarChart>
       </ResponsiveContainer>
+  
+      {/* 📝 Summary Line */}
+      <p style={styles.summary}>
+        The majority of electric vehicles fall within the 0-49 miles range, with a few models reaching higher ranges beyond 300 miles, indicating a trend toward more efficient battery technologies.
+      </p>
     </div>
   );
+  
 }
 
 // Dark mode styles
@@ -115,4 +117,12 @@ const styles = {
     border: "1px solid #444",
     color: "#fff",
   },
+  summary: {
+    marginTop: "12px",
+    fontSize: "18px",
+    color: "#cccccc",
+    textAlign: "center",
+    lineHeight: "1.4",
+  },
+  
 };

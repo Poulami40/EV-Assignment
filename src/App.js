@@ -49,15 +49,56 @@ function App() {
     {evData.length > 0 ? (
       <>
         <Dashboard data={evData} />
-       
+        <div style={styles.footer}>
+  <p style={styles.footerText}>© 2025. All Rights Reserved.</p>
+</div>
+
       </>
     ) : (
-      <p>Loading data...</p>
+      <div style={styles.loaderContainer}>
+        <div style={styles.spinner}></div>
+        <p style={{ color: "#ccc", marginTop: "10px" }}>Loading data...</p>
+      </div>
     )}
+    
   </div>
   
   
   );
 }
+const styles = {
+  loaderContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "2rem",
+  },
+  spinner: {
+    border: "4px solid #333",
+    borderTop: "4px solid #00C49F", // You can change this color
+    borderRadius: "50%",
+    width: "40px",
+    height: "40px",
+    animation: "spin 1s linear infinite",
+  },
+  footer: {
+    height: "180px", // Adjust height as needed
+    backgroundColor: "rgb(35, 35, 35)", // Footer background color
+    display: "flex",
+    alignItems: "center", // Vertically center the text
+    justifyContent: "center", // Horizontally center the text
+    color: "#fff",
+    width: "100%", 
+    marginTop: "20px", // Optional: Space above the footer
+    position: "absolute",
+    // bottom: 0, // Stick it to the bottom of the screen
+    left: 0, // Ensure it starts at the left edge of the screen
+  },
+  footerText: {
+    fontSize: "20px",
+    textAlign: "center",
+  },
+};
 
 export default App;

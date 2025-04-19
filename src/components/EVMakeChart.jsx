@@ -82,6 +82,10 @@ export default function EVMakeChart({ data }) {
           />
         </BarChart>
       </ResponsiveContainer>
+      {/* 📝 Summary Line */}
+    <p style={styles.summary}>
+      Tesla leads the market significantly, followed by Nissan and Chevrolet — highlighting their dominance in EV manufacturing.
+    </p>
     </div>
   );
 }
@@ -108,4 +112,12 @@ const styles = {
     border: "1px solid #444",
     color: "#fff",
   },
+  summary: {
+    marginTop: "12px",
+    fontSize: "18px",
+    color: "#cccccc",
+    textAlign: "center",
+    lineHeight: "1.4",
+  },
+  
 };

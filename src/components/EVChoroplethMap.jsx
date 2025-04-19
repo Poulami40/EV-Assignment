@@ -129,7 +129,7 @@ export default function EVChoroplethMap({ data }) {
 >
 
         <TileLayer
-          attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
+          // attribution='&copy; <a href="https://osm.org/copyright"></a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {countyGeoJSON && (

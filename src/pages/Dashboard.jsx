@@ -17,7 +17,15 @@ import VINLookup from "../components/VINLookup";
 export default function Dashboard({ data }) {
     const [filteredData] = useState(data);
 
-    if (!filteredData || filteredData.length === 0) return <p>Loading data...</p>;
+    if (!filteredData || filteredData.length === 0) {
+        return (
+          <div style={styles.loaderContainer}>
+            <div style={styles.spinner}></div>
+            <p style={{ color: "#ccc", marginTop: "10px" }}>Loading data...</p>
+          </div>
+        );
+      }
+      
 
   return (
     <div>
@@ -36,8 +44,8 @@ export default function Dashboard({ data }) {
       </div>
 
       <div className="dashboard-container">
-        <h1>Geographical analysis of electric vehicle count</h1>
-        <p style={styles.description}>This section explores the geographical distribution of electric vehicles.</p>
+        <h1 style={{marginTop:"100px"}}>Geographical analysis of electric vehicle count</h1>
+        <p style={styles.description}>This section explores the geographical distribution of electric vehicles for all 39 counties.</p>
         <EVChoroplethMap data={filteredData} />
       </div>
 
@@ -65,7 +73,8 @@ export default function Dashboard({ data }) {
       </div>
 
       <h2 style={styles.sectionHeader}>Market Analysis</h2>
-      <p style={styles.description}>Evaluating the market for electric vehicles based on cost and other factors.</p>
+      <p style={styles.description}> This chart shows the relationship between an EV’s cost (Base MSRP) and its electric range.<br />
+      The bubble size represents the popularity of each model, helping compare affordability, efficiency, and adoption.</p>
       <EVCostVsRange data={filteredData} />
       <VINLookup data={data} />
     </div>
@@ -88,6 +97,21 @@ const styles = {
         color: "#ccc",
         textAlign: "center",
         marginBottom: "80px",
-      }
+      },
+      loaderContainer: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "2rem",
+      },
+      spinner: {
+        border: "4px solid #333",
+        borderTop: "4px solid #00C49F", // you can pick any color
+        borderRadius: "50%",
+        width: "40px",
+        height: "40px",
+        animation: "spin 1s linear infinite",
+      },
   };
   

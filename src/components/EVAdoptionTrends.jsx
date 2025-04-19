@@ -9,7 +9,6 @@ import {
   ResponsiveContainer,
   CartesianGrid,
   Area,
-  // defs,
 } from "recharts";
 
 export default function EVAdoptionTrends({ data }) {
@@ -25,6 +24,22 @@ export default function EVAdoptionTrends({ data }) {
       count: filtered.length,
     };
   });
+
+  // Find the year with the highest and lowest adoption
+  const highestYear = chartData.reduce((prev, current) => (prev.count > current.count ? prev : current));
+  const lowestYear = chartData.reduce((prev, current) => (prev.count < current.count ? prev : current));
+
+  // Determine the trend based on the first and last years
+  const trend = chartData[chartData.length - 1].count > chartData[0].count
+    ? "increasing"
+    : "decreasing";
+
+  // Dynamic message based on selected county
+  const message = selectedCounty === "All"
+    ? `The chart displays EV adoption trends for all counties. You can select a specific county to view adoption trends in that region. 
+       The highest adoption was in ${highestYear.year} with ${highestYear.count} vehicles, and the lowest adoption was in ${lowestYear.year} with ${lowestYear.count} vehicles. The overall trend appears to be ${trend}.`
+    : `EV adoption trends for ${selectedCounty} county. The data represents the number of EVs registered in each year for this county. 
+       The highest adoption was in ${highestYear.year} with ${highestYear.count} vehicles, and the lowest adoption was in ${lowestYear.year} with ${lowestYear.count} vehicles. The trend in ${selectedCounty} county appears to be ${trend}.`;
 
   return (
     <div style={{ background: "#1a1a1a", padding: "2rem", borderRadius: "1rem", color: "white", marginTop: "2rem" }}>
@@ -95,6 +110,11 @@ export default function EVAdoptionTrends({ data }) {
           />
         </LineChart>
       </ResponsiveContainer>
+
+      {/* 📝 Dynamic Message */}
+      <p style={{ marginTop: "12px", fontSize: "18px", color: "#cccccc", textAlign: "center", lineHeight: "1.4" }}>
+        {message}
+      </p>
     </div>
   );
 }

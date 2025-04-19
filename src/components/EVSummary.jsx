@@ -13,7 +13,7 @@ export default function EVSummary({ data }) {
   const avgRange = Math.round(
     data.reduce((sum, ev) => sum + (parseInt(ev["Electric Range"]) || 0), 0) / totalEVs
   );
-
+  
   return (
     <div className="card-grid">
       <div className="card">
