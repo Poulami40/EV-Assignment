@@ -93,7 +93,7 @@ const styles = {
         fontSize: "40px",
         fontWeight: "bold",
         textAlign: "center",
-        marginTop: "120px",
+        marginTop: "140px",
         marginBottom: "30px",
         textTransform: "uppercase",
         background: "linear-gradient(90deg,rgb(0, 255, 208),rgb(203, 200, 255))",
@@ -107,7 +107,7 @@ const styles = {
         fontSize: "20px",
         color: "#ccc",
         textAlign: "center",
-        marginBottom: "120px",
+        marginBottom: "140px",
       },
       loaderContainer: {
         display: "flex",
