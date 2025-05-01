@@ -34,8 +34,27 @@ The app will run locally at: http://localhost:3000
 
 ### 📁 Project Structure
 
-src/ ├── components/ # Reusable chart and layout components │ ├── CAFVBarByMake.jsx │ ├── EVCostVsRange.jsx │ ├── EVSummary.jsx │ ├── CountyAdoptionChart.jsx │ ├── EVRangeOverTime.jsx │ └── Insights.jsx ├── data/ # Static or preloaded EV data (CSV/JSON) │ └── ev_data.json ├── styles/ # Optional - centralized style definitions ├── App.jsx # Main app component (routes, layout) └── index.js # Entry point for ReactDOM
-
+my-ev-dashboard/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── CAFVBarByMake.jsx
+│   │   ├── CAFVPieChart.jsx
+│   │   ├── CountyAdoptionChart.jsx
+│   │   ├── EVCostVsRange.jsx
+│   │   ├── EVRangeOverTime.jsx
+│   │   ├── EVSummary.jsx
+│   │   └── Insights.jsx
+│   ├── data/
+│   │   └── ev_data.json
+│   ├── App.jsx
+│   ├── index.js
+│   └── styles.js (optional - if using styled components or shared styles)
+├── .gitignore
+├── package.json
+├── README.md
+└── vite.config.js / webpack.config.js (depending on build tool)
 
 ---
 
