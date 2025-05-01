@@ -32,30 +32,6 @@ npm start
 
 The app will run locally at: http://localhost:3000
 
-### 📁 Project Structure
-
-my-ev-dashboard/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── CAFVBarByMake.jsx
-│   │   ├── CAFVPieChart.jsx
-│   │   ├── CountyAdoptionChart.jsx
-│   │   ├── EVCostVsRange.jsx
-│   │   ├── EVRangeOverTime.jsx
-│   │   ├── EVSummary.jsx
-│   │   └── Insights.jsx
-│   ├── data/
-│   │   └── ev_data.json
-│   ├── App.jsx
-│   ├── index.js
-│   └── styles.js (optional - if using styled components or shared styles)
-├── .gitignore
-├── package.json
-├── README.md
-└── vite.config.js / webpack.config.js (depending on build tool)
-
 ---
 
 ## 🛠️ Built With
