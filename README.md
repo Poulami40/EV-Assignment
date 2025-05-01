@@ -24,7 +24,7 @@ A dynamic, responsive dashboard built with **React** and **Recharts** to explore
 
 ### Installation
 
-```bash
+
 git clone https://github.com/your-username/EV-Assignment.git
 cd EV-Assignment
 npm install
@@ -32,7 +32,7 @@ npm start
 
 The app will run locally at: http://localhost:3000
 
-## 📁 Project Structure
+### 📁 Project Structure
 
 src/ ├── components/ # Reusable chart and layout components │ ├── CAFVBarByMake.jsx │ ├── EVCostVsRange.jsx │ ├── EVSummary.jsx │ ├── CountyAdoptionChart.jsx │ ├── EVRangeOverTime.jsx │ └── Insights.jsx ├── data/ # Static or preloaded EV data (CSV/JSON) │ └── ev_data.json ├── styles/ # Optional - centralized style definitions ├── App.jsx # Main app component (routes, layout) └── index.js # Entry point for ReactDOM
 
