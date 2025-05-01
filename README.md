@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# ⚡ EV Insights Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic, responsive dashboard built with **React** and **Recharts** to explore and analyze electric vehicle (EV) trends, including adoption, range, cost, and Clean Alternative Fuel Vehicle (CAFV) eligibility across various makes and regions.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📦 Features
 
-### `npm start`
+- 📈 **EV Range vs Cost** — Visual comparison of MSRP and electric range, with bubble sizes indicating popularity.
+- 📊 **CAFV Eligibility** — Stacked bar chart showing eligible vs. non-eligible vehicles by manufacturer.
+- 🗺️ **County-Level Adoption** — Interactive trends across all 39 Washington state counties.
+- 📅 **Range Over Time** — Track the evolution of average EV range by year.
+- 🧠 **Auto-generated Insights** — Clear, concise insights and summaries under each chart.
+- 📱 **Fully Responsive Design** — Works seamlessly on desktop, tablet, and mobile.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) v14 or higher
+- npm or yarn package manager
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/your-username/EV-Assignment.git
+cd EV-Assignment
+npm install
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app will run locally at: http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
 
-### `npm run eject`
+src/ ├── components/ # Reusable chart and layout components │ ├── CAFVBarByMake.jsx │ ├── EVCostVsRange.jsx │ ├── EVSummary.jsx │ ├── CountyAdoptionChart.jsx │ ├── EVRangeOverTime.jsx │ └── Insights.jsx ├── data/ # Static or preloaded EV data (CSV/JSON) │ └── ev_data.json ├── styles/ # Optional - centralized style definitions ├── App.jsx # Main app component (routes, layout) └── index.js # Entry point for ReactDOM
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Built With
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React** — Frontend framework
+- **Recharts** — Charting library for intuitive data visualization
+- **JavaScript (ES6+)**
+- **CSS-in-JS / Inline Styling** — Responsive and maintainable UI styling
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📈 Future Improvements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 📅 Add year-based filters and interactive controls
+- 🌐 Integrate live data APIs for real-time trends
+- 📤 Export chart views as PNG/PDF
+- 📱 Improve accessibility and mobile responsiveness further
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📄 License
 
-### Analyzing the Bundle Size
+This project is licensed under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🙌 Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Washington State Department of Licensing — For open EV registration data
+- Inspiration drawn from efforts toward sustainable transportation and public data accessibility
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Working website URL - https://ev-assignment-rouge.vercel.app/
